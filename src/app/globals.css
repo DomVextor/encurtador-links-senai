@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #00F0FF;
+  --primary-glow: rgba(0, 240, 255, 0.4);
+  --surface: #0a0a0c;
+  --border: #1a1a24;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Custom Cyber Brutalist Utilities */
+.brutalist-border {
+  border: 1px solid var(--border);
+}
+
+.brutalist-border-primary {
+  border: 1px solid var(--primary);
+}
+
+.glow-primary {
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.focus-ring {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
