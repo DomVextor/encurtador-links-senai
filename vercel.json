@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "routes": [
+    {
+      "src": "/r/(?<id>[^/]+)",
+      "dest": "/r?id=$id",
+      "status": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin-allow-popups"
+        }
+      ]
+    }
+  ]
+}

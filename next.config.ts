@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  /* No Vercel, não precisamos de output: export, o que permite redirecionamentos dinâmicos */
+  async redirects() {
+    return [
+      {
+        source: '/r/:id',
+        destination: '/r?id=:id',
+        permanent: true,
+      },
+    ]
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
